@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * swap_ints -  a function that takes 2 elements of an array and swap them
+ * @b: bigger one
+ * @s: smaller one
+ *
+ * Return: nothing
+ */
+void swap_ints(int *b, int *s)
+{
+	int tmp;
+
+	tmp = *b;
+	*b = *s;
+	*s = tmp;
+}
+
+/**
  * bubble_sort - sorting an array using bubble method
  * @array: pointer to an array of integers
  * @size: int size of array
@@ -22,9 +38,7 @@ void bubble_sort(int *array, size_t size)
 			/*swap*/
 			if (array[j - 1] > array[j])
 			{
-				temp = array[j - 1];
-				array[j - 1] = array[j];
-				array[j] = temp;
+				swap_ints(array + j, array + j + 1);
 			}
 			print_array(array, size);
 		}
