@@ -40,7 +40,7 @@ void swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *nextcheck;
+	listint_t *nextcheck = NULL;
 	listint_t *check = *list;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
@@ -54,7 +54,7 @@ void insertion_sort_list(listint_t **list)
 		while (check->prev != NULL && check->n < check->prev->n)
 		{
 			swap_nodes(list, check->prev, check);
-			print_list((const listint_t *)*list);
+			print_list(*list);
 		}
 		check = nextcheck;
 	}
