@@ -26,7 +26,6 @@ void swap_ints(int *b, int *s)
 void bubble_sort(int *array, size_t size)
 {
 	unsigned long int i = 0, j = 0;
-	int temp;
 
 	if (size <= 1)
 		return;
